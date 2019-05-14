@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    proxy:
+        container_name: haproxy
+        build: ./haproxy
+        networks:
+            - host
+        ports:
+            - '9000:9000'
+            - '6387:6387'
+            - '6388:6388'
+
+networks:
+  host:
+
