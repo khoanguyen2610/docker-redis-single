@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    redis_server:
+        container_name: redis_server
+        build: ./redis
+        ports:
+            - 6379:6379
+        networks:
+            - host
+        env_file:
+            - './redis/env/common_variables.env'
+            - './redis/env/slave_variables.env'
+        volumes:
+            - './redis/data/6379:/etc/redis/data'
+
+networks:
+  host:
+
