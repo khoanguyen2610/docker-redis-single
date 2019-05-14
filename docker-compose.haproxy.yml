@@ -2,7 +2,7 @@ version: '3'
 
 services:
     proxy:
-        container_name: haproxy
+        container_name: haproxy_server
         build: ./haproxy
         networks:
             - host
